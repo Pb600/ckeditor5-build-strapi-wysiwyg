@@ -42,6 +42,8 @@ import { StrapiUploadAdapter } from '@gtomato/ckeditor5-strapi-upload-plugin';
 import { StrapiMediaLib } from './strapi-medialib-plugin';
 import sanitizeHtml from 'sanitize-html';
 import FullScreen from './fullscreen-plugin';
+import RemoveFormat from '@ckeditor/ckeditor5-remove-format/src/removeformat';
+
 
 export default class ClassicEditor extends ClassicEditorBase { }
 
@@ -88,6 +90,7 @@ ClassicEditor.builtinPlugins = [
 	FullScreen,
 	TableProperties,
 	TableCellProperties,
+	RemoveFormat
 ];
 
 // Editor configuration.
@@ -127,6 +130,8 @@ ClassicEditor.defaultConfig = {
 			'fullScreen',
 			'undo',
 			'redo',
+			'|',
+			'removeFormat'
 		],
 		shouldNotGroupWhenFull: true
 	},
